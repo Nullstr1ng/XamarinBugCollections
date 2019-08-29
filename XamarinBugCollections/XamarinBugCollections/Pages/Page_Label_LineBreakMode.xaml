@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinBugCollections.Pages.Page_Label_LineBreakMode">
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at suscipit dolor. Ut et orci sed arcu accumsan pretium et nec tortor. Sed cursus enim et ex accumsan vulputate. Donec quis interdum nunc. Maecenas sit amet tortor vitae orci consequat euismod sed ac mauris. Nam bibendum varius augue, nec luctus leo consequat sed. Cras semper lacus a lacus mollis ullamcorper. Nam sit amet quam egestas, vestibulum lacus ut, cursus neque." />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
