@@ -4,10 +4,80 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinBugCollections.Pages.Page_Label_LineBreakMode">
+             x:Class="XamarinBugCollections.Pages.Page_Label_LineBreakMode"
+             BindingContext="{Binding Source={StaticResource Locator}}"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             >
     <ContentPage.Content>
-        <Grid Margin="10">
-            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at suscipit dolor. Ut et orci sed arcu accumsan pretium et nec tortor. Sed cursus enim et ex accumsan vulputate. Donec quis interdum nunc. Maecenas sit amet tortor vitae orci consequat euismod sed ac mauris. Nam bibendum varius augue, nec luctus leo consequat sed. Cras semper lacus a lacus mollis ullamcorper. Nam sit amet quam egestas, vestibulum lacus ut, cursus neque." />
+        <Grid>
+            <ScrollView>
+                <StackLayout Margin="10">
+                    <Label Text="Label - no parant container" FontAttributes="Bold" />
+                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at suscipit dolor. Ut et orci sed arcu accumsan pretium et nec tortor." />
+
+                    <Label Text="Label inside the X.F. CarouselView" FontAttributes="Bold" />
+                    <CarouselView ItemsSource="{Binding Onboarding.Onboarding}" BackgroundColor="Red" HeightRequest="200">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackLayout Margin="10">
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
+
+                                        <Label Text="{Binding Description}" LineBreakMode="WordWrap" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                    <Label Text="Label inside the AlexRainman's CarouselView" FontAttributes="Bold" />
+                    <cv:CarouselViewControl ItemsSource="{Binding Onboarding.Onboarding}" BackgroundColor="Blue" HeightRequest="200">
+                        <cv:CarouselViewControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackLayout Margin="10">
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
+
+                                        <Label Text="{Binding Description}" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </cv:CarouselViewControl.ItemTemplate>
+                    </cv:CarouselViewControl>
+
+                    <Label Text="Label inside the CollectionView" FontAttributes="Bold" />
+                    <CollectionView ItemsSource="{Binding Onboarding.Onboarding}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
+
+                                        <Label Text="{Binding Description}" LineBreakMode="WordWrap" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Label Text="Label inside the ListView" FontAttributes="Bold" />
+                    <ListView ItemsSource="{Binding Onboarding.Onboarding}" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <StackLayout>
+                                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
+
+                                            <Label Text="{Binding Description}" LineBreakMode="WordWrap" />
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

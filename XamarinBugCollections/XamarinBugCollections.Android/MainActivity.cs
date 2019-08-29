@@ -17,6 +17,8 @@ namespace XamarinBugCollections.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            //Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental", "Shell_Experimental");
+
             base.OnCreate(savedInstanceState);
 
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");

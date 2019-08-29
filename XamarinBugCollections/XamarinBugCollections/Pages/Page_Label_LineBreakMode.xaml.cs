@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinBugCollections.ViewModel;
 
 namespace XamarinBugCollections.Pages
 {
@@ -15,6 +16,13 @@ namespace XamarinBugCollections.Pages
         public Page_Label_LineBreakMode()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            ((ViewModelLocator)this.BindingContext).Onboarding.RefreshData();
         }
     }
 }
