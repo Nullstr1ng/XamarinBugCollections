@@ -46,14 +46,14 @@
                     </cv:CarouselViewControl>
 
                     <Label Text="Label inside the CollectionView" FontAttributes="Bold" />
-                    <CollectionView ItemsSource="{Binding Onboarding.Onboarding}">
+                    <CollectionView ItemsSource="{Binding Onboarding.Onboarding}" BackgroundColor="Green">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <StackLayout>
                                         <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
 
-                                        <Label Text="{Binding Description}" LineBreakMode="WordWrap" />
+                                        <Label Text="{Binding Description}" />
                                     </StackLayout>
                                 </Grid>
                             </DataTemplate>
@@ -61,7 +61,7 @@
                     </CollectionView>
 
                     <Label Text="Label inside the ListView" FontAttributes="Bold" />
-                    <ListView ItemsSource="{Binding Onboarding.Onboarding}" HasUnevenRows="True">
+                    <ListView ItemsSource="{Binding Onboarding.Onboarding}" HasUnevenRows="True" BackgroundColor="Yellow">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -69,7 +69,7 @@
                                         <StackLayout>
                                             <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
 
-                                            <Label Text="{Binding Description}" LineBreakMode="WordWrap" />
+                                            <Label Text="{Binding Description}" />
                                         </StackLayout>
                                     </Grid>
                                 </ViewCell>
