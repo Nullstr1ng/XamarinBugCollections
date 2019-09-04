@@ -30,6 +30,19 @@
                         </CarouselView.ItemTemplate>
                     </CarouselView>
 
+                    <Label Text="Label inside the X.F. CarouselView (Title only)" FontAttributes="Bold" />
+                    <CarouselView ItemsSource="{Binding Onboarding.Onboarding}" BackgroundColor="Red" HeightRequest="200">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackLayout Margin="10">
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
                     <Label Text="Label inside the AlexRainman's CarouselView" FontAttributes="Bold" />
                     <cv:CarouselViewControl ItemsSource="{Binding Onboarding.Onboarding}" BackgroundColor="Blue" HeightRequest="200">
                         <cv:CarouselViewControl.ItemTemplate>
